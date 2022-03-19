@@ -38,7 +38,7 @@ io.on("connection", async (socket) => {
   // Get comment from db
   await Comment.find({}).then((result) => {
     // console.log(data);
-    io.emit("comment", result);
+    socket.emit("comment", result);
   });
 
   // Send comment
